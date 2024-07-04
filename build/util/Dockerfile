@@ -17,12 +17,13 @@ RUN groupadd -g $ARGOCD_USER_ID argocd && \
     apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get install -y \
-    git git-lfs tini curl python3-pip gpg tzdata && \
+    awscli git git-lfs tini curl python3-pip gpg tzdata && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install the AWS CLI
-RUN pip3 install awscli
+# I commented it, and add it on line 20
+#RUN pip3 install awscli
 
 # Install the Microsoft Azure CLI
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash && \
