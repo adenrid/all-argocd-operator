@@ -41,10 +41,10 @@ jobs:
           
 # Build bundle-build contanier image
       - name: Build bundle container image
-        run: make bundle-build IMG=quay.io/argoprojlabs/argocd-operator-bundle:latest
+        run: make bundle-build IMG=quay.io/argoprojlabs/argocd-operator-bundle:v0.11.0
 
       - name: Save image
-        run: docker save quay.io/argoprojlabs/argocd-operator-bundle:latest -o argo-operator-bundle-image.tar
+        run: docker save quay.io/argoprojlabs/argocd-operator-bundle:v0.11.0 -o argo-operator-bundle-image.tar
       
       - name: Upload Docker image as artifact
         uses: actions/upload-artifact@v4
