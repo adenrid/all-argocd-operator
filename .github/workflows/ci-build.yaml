@@ -41,10 +41,10 @@ jobs:
           
 # Build util-build contanier image
       - name: Build util container image
-        run: make util-build IMG=quay.io/argoprojlabs/argocd-operator-util:latest
+        run: make util-build
 
       - name: Save image
-        run: docker save quay.io/argoprojlabs/argocd-operator-util:latest -o argo-operator-util-image.tar
+        run: docker save quay.io/argoprojlabs/argocd-operator-util:v0.11.0 -o argo-operator-util-image.tar
       
       - name: Upload Docker image as artifact
         uses: actions/upload-artifact@v4
