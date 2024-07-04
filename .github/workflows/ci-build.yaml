@@ -53,17 +53,17 @@ jobs:
           path: argo-operator-bundle-image.tar    
           
 # Build catalog-build contanier image
-      - name: Build catalog container image
-        run: make catalog-build IMG=quay.io/argoprojlabs/argocd-operator-catalog:latest
+      # - name: Build catalog container image
+      #   run: make catalog-build IMG=quay.io/argoprojlabs/argocd-operator-catalog:latest
 
-      - name: Save image
-        run: docker save quay.io/argoprojlabs/argocd-operator-catalog:latest -o argo-operator-catalog-image.tar
+      # - name: Save image
+      #   run: docker save quay.io/argoprojlabs/argocd-operator-catalog:latest -o argo-operator-catalog-image.tar
       
-      - name: Upload Docker image as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: argo-operator-catalog-image.tar
-          path: argo-operator-catalog-image.tar   
+      # - name: Upload Docker image as artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: argo-operator-catalog-image.tar
+      #     path: argo-operator-catalog-image.tar   
           
 # Build util-build contanier image
       - name: Build util container image
