@@ -39,6 +39,19 @@ jobs:
           path: ~/.cache/go-build
           key: ${{ runner.os }}-go-build-v1-${{ github.run_id }}
           
+# Build util-build contanier image
+      - name: Build util container image
+        run: make util-build IMG=quay.io/argoprojlabs/argocd-operator-util:latest
+
+      - name: Save image
+        run: docker save quay.io/argoprojlabs/argocd-operator-util:latest -o argo-operator-util-image.tar
+      
+      - name: Upload Docker image as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: argo-operator-util-image.tar
+          path: argo-operator-util-image.tar   
+      
 # Build bundle-build contanier image
       - name: Build bundle container image
         run: make bundle-build 
@@ -64,19 +77,6 @@ jobs:
       #   with:
       #     name: argo-operator-catalog-image.tar
       #     path: argo-operator-catalog-image.tar   
-          
-# Build util-build contanier image
-      # - name: Build util container image
-      #   run: make util-build IMG=quay.io/argoprojlabs/argocd-operator-util:latest
-
-      # - name: Save image
-      #   run: docker save quay.io/argoprojlabs/argocd-operator-util:latest -o argo-operator-util-image.tar
-      
-      # - name: Upload Docker image as artifact
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: argo-operator-util-image.tar
-      #     path: argo-operator-util-image.tar   
           
 # Build registry-build contanier image
       - name: Build registry container image
