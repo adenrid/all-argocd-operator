@@ -21,6 +21,15 @@ spec:
            allowPrivilegeEscalation: false
            readOnlyRootFilesystem: true 
            runAsNonRoot: true
+           # ADEN
+           seccompProfile:
+             type: RuntimeDefault
+      # ADEN add imagepullsecret HERE
+      tolerations:
+        - effect: NoSchedule
+          key: zone
+          operator: Equal
+          value: west
       volumes:
       - name: manager-config
         configMap:

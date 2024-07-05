@@ -38,6 +38,9 @@ spec:
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true 
           runAsNonRoot: true
+          # ADEN
+          seccompProfile:
+            type: RuntimeDefault
         livenessProbe:
           httpGet:
             path: /healthz
@@ -57,3 +60,9 @@ spec:
               fieldPath: metadata.annotations['olm.targetNamespaces']
       serviceAccountName: controller-manager
       terminationGracePeriodSeconds: 10
+      # ADEN add imagepullsecret HERE
+      tolerations:
+        - effect: NoSchedule
+          key: zone
+          operator: Equal
+          value: west      

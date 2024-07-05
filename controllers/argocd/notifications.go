@@ -394,6 +394,10 @@ func (r *ReconcileArgoCD) reconcileNotificationsDeployment(cr *argoproj.ArgoCD, 
 					"ALL",
 				},
 			},
+			// ADEN
+			SeccompProfile: &corev1.SeccompProfile{
+				Type: "RuntimeDefault",
+			},
 		},
 		VolumeMounts: []corev1.VolumeMount{
 			{

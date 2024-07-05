@@ -181,6 +181,10 @@ func TestReconcileNotifications_CreateDeployments(t *testing.T) {
 					"ALL",
 				},
 			},
+			// ADEN
+			SeccompProfile: &corev1.SeccompProfile{
+				Type: "RuntimeDefault",
+			},
 		},
 		VolumeMounts: []corev1.VolumeMount{
 			{
