@@ -349,6 +349,8 @@ func (r *ReconcileArgoCD) reconcileNotificationsDeployment(cr *argoproj.ArgoCD, 
 	}
 	AddSeccompProfileForOpenShift(r.Client, podSpec)
 	podSpec.ServiceAccountName = sa.ObjectMeta.Name
+	podSpec.ImagePullSecrets = []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}}
+
 	podSpec.Volumes = []corev1.Volume{
 		{
 			Name: "tls-certs",

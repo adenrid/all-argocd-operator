@@ -1135,6 +1135,7 @@ func TestReconcileArgoCD_reconcileServerDeployment(t *testing.T) {
 		Volumes:            serverDefaultVolumes(),
 		ServiceAccountName: "argocd-argocd-server",
 		NodeSelector:       common.DefaultNodeSelector(),
+		ImagePullSecrets:   []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 	}
 
 	assert.Equal(t, want, deployment.Spec.Template.Spec)
@@ -1377,6 +1378,7 @@ func TestReconcileArgoCD_reconcileServerDeploymentWithInsecure(t *testing.T) {
 		Volumes:            serverDefaultVolumes(),
 		ServiceAccountName: "argocd-argocd-server",
 		NodeSelector:       common.DefaultNodeSelector(),
+		ImagePullSecrets:   []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 	}
 
 	assert.Equal(t, want, deployment.Spec.Template.Spec)
@@ -1484,6 +1486,7 @@ func TestReconcileArgoCD_reconcileServerDeploymentChangedToInsecure(t *testing.T
 		Volumes:            serverDefaultVolumes(),
 		ServiceAccountName: "argocd-argocd-server",
 		NodeSelector:       common.DefaultNodeSelector(),
+		ImagePullSecrets:   []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 	}
 
 	assert.Equal(t, want, deployment.Spec.Template.Spec)
@@ -1626,6 +1629,7 @@ func Test_UpdateNodePlacement(t *testing.T) {
 		Spec: appsv1.DeploymentSpec{
 			Template: corev1.PodTemplateSpec{
 				Spec: corev1.PodSpec{
+					ImagePullSecrets: []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 					NodeSelector: map[string]string{
 						"test_key1": "test_value1",
 						"test_key2": "test_value2",
@@ -1649,6 +1653,7 @@ func Test_UpdateNodePlacement(t *testing.T) {
 		Spec: appsv1.DeploymentSpec{
 			Template: corev1.PodTemplateSpec{
 				Spec: corev1.PodSpec{
+					ImagePullSecrets: []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 					NodeSelector: map[string]string{
 						"test_key1": "test_value1",
 					},

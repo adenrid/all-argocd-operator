@@ -1891,7 +1891,7 @@ spec:
                       fieldPath: metadata.annotations['olm.targetNamespaces']
                 - name: ENABLE_CONVERSION_WEBHOOK
                   value: "true"
-                image: rrid12/argocd-operator:v0.11.0 #ADEN quay.io/argoprojlabs/argocd-operator:v0.11.0
+                image: docker-opc-group-cicd-nexus.rp-ocn.apps.ocn.infra.ftgroup/rrid12/argocd-operator:v0.11.0 #ADEN quay.io/argoprojlabs/argocd-operator:v0.11.0
                 livenessProbe:
                   httpGet:
                     path: /healthz
@@ -1924,6 +1924,8 @@ spec:
               serviceAccountName: argocd-operator-controller-manager
               terminationGracePeriodSeconds: 10
               # ADEN add imagepullsecret HERE
+              imagePullSecrets:
+                - name: "docker-opc-group-cicd-nexus"
               tolerations:
                 - effect: NoSchedule
                   key: zone

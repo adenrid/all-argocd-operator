@@ -397,7 +397,8 @@ func newDeploymentWithName(name string, component string, cr *argoproj.ArgoCD) *
 				},
 			},
 			Spec: corev1.PodSpec{
-				NodeSelector: common.DefaultNodeSelector(),
+				NodeSelector:     common.DefaultNodeSelector(),
+				ImagePullSecrets: []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 			},
 		},
 	}

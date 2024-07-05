@@ -254,6 +254,7 @@ func TestReconcileArgoCD_reconcileDexDeployment(t *testing.T) {
 		},
 		deployment))
 	want := corev1.PodSpec{
+		ImagePullSecrets: []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 		Volumes: []corev1.Volume{
 			{
 				Name: "static-files",
@@ -383,6 +384,7 @@ func TestReconcileArgoCD_reconcileDexDeployment_withUpdate(t *testing.T) {
 				}
 			}),
 			wantPodSpec: corev1.PodSpec{
+				ImagePullSecrets: []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 				Volumes: []corev1.Volume{
 					{
 						Name: "static-files",
@@ -504,6 +506,7 @@ func TestReconcileArgoCD_reconcileDexDeployment_withUpdate(t *testing.T) {
 				}
 			}),
 			wantPodSpec: corev1.PodSpec{
+				ImagePullSecrets: []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
 				Volumes: []corev1.Volume{
 					{
 						Name: "static-files",

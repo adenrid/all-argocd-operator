@@ -119,7 +119,7 @@ const (
 	ArgoCDDefaultDexVersion = "sha256:d5f887574312f606c61e7e188cfb11ddb33ff3bf4bd9f06e6b1458efca75f604" // v2.30.3
 
 	// ArgoCDDefaultExportJobImage is the export job container image to use when not specified.
-	ArgoCDDefaultExportJobImage = "rrid12/argocd-operator-util" // ADEN "quay.io/argoprojlabs/argocd-operator-util"
+	ArgoCDDefaultExportJobImage = "docker-opc-group-cicd-nexus.rp-ocn.apps.ocn.infra.ftgroup/rrid12/argocd-operator-util" // ADEN "quay.io/argoprojlabs/argocd-operator-util"
 
 	// ArgoCDDefaultExportJobVersion is the export job container image tag to use when not specified.
 	ArgoCDDefaultExportJobVersion = "v0.11.0" // ADEN "sha256:823c307ea39de913e2bca0e2a7139fb3ea5b4a7462e82ad7450fd4c38b68e7e4" // 0.10.0

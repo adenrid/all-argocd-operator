@@ -213,6 +213,11 @@ func TestReconcileNotifications_CreateDeployments(t *testing.T) {
 		t.Fatalf("failed to reconcile notifications-controller deployment containers:\n%s", diff)
 	}
 
+	ImagePullSecrets := []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}}
+	if diff := cmp.Diff(ImagePullSecrets, deployment.Spec.Template.Spec.ImagePullSecrets); diff != "" {
+		t.Fatalf("failed to reconcile notifications-controller deployment ImagePullSecrets:\n%s", diff)
+	}
+
 	volumes := []corev1.Volume{
 		{
 			Name: "tls-certs",

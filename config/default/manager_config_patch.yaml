@@ -25,6 +25,8 @@ spec:
            seccompProfile:
              type: RuntimeDefault
       # ADEN add imagepullsecret HERE
+      imagePullSecrets:
+        - name: "docker-opc-group-cicd-nexus"
       tolerations:
         - effect: NoSchedule
           key: zone

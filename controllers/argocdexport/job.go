@@ -166,7 +166,9 @@ func newCronJob(cr *argoproj.ArgoCDExport) *batchv1.CronJob {
 }
 
 func newExportPodSpec(cr *argoproj.ArgoCDExport, argocdName string, client client.Client) corev1.PodSpec {
-	pod := corev1.PodSpec{}
+	pod := corev1.PodSpec{
+		ImagePullSecrets: []corev1.LocalObjectReference{{Name: "docker-opc-group-cicd-nexus"}},
+	}
 
 	boolPtr := func(value bool) *bool {
 		return &value

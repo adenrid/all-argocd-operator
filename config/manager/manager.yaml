@@ -61,6 +61,8 @@ spec:
       serviceAccountName: controller-manager
       terminationGracePeriodSeconds: 10
       # ADEN add imagepullsecret HERE
+      imagePullSecrets:
+        - name: "docker-opc-group-cicd-nexus"
       tolerations:
         - effect: NoSchedule
           key: zone
