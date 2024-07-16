@@ -1965,9 +1965,9 @@ spec:
         serviceAccountName: argocd-operator-controller-manager
     strategy: deployment
   installModes:
-  - supported: false
+  - supported: true #false Me
     type: OwnNamespace
-  - supported: false
+  - supported: true #false Me
     type: SingleNamespace
   - supported: true #false Me
     type: MultiNamespace
