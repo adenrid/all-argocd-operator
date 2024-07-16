@@ -1971,7 +1971,7 @@ spec:
     type: SingleNamespace
   - supported: false
     type: MultiNamespace
-  - supported: true
+  - supported: false #true Me
     type: AllNamespaces
   keywords:
   - gitops
