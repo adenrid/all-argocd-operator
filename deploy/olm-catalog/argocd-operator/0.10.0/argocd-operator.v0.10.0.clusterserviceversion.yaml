@@ -1967,7 +1967,7 @@ spec:
     type: OwnNamespace
   - supported: false
     type: SingleNamespace
-  - supported: false
+  - supported: true
     type: MultiNamespace
   - supported: false #true Me
     type: AllNamespaces

@@ -1969,7 +1969,7 @@ spec:
     type: OwnNamespace
   - supported: false
     type: SingleNamespace
-  - supported: false
+  - supported: true #false Me
     type: MultiNamespace
   - supported: false #true Me
     type: AllNamespaces
