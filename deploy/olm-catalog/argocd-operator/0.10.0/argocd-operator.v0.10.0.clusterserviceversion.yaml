@@ -1967,9 +1967,9 @@ spec:
     type: OwnNamespace
   - supported: false
     type: SingleNamespace
-  - supported: true
+  - supported: false
     type: MultiNamespace
-  - supported: false #true Me
+  - supported: true
     type: AllNamespaces
   keywords:
   - gitops
