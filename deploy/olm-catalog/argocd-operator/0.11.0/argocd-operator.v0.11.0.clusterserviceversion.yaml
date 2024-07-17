@@ -1965,13 +1965,13 @@ spec:
         serviceAccountName: argocd-operator-controller-manager
     strategy: deployment
   installModes:
-  - supported: true #false Me
+  - supported: false
     type: OwnNamespace
-  - supported: false #false Me
+  - supported: false
     type: SingleNamespace
-  - supported: true #false Me
+  - supported: false
     type: MultiNamespace
-  - supported: true #true Me
+  - supported: true
     type: AllNamespaces
   keywords:
   - gitops
