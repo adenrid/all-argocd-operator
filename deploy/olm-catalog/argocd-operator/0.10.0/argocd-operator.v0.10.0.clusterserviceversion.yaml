@@ -1889,7 +1889,7 @@ spec:
                       fieldPath: metadata.annotations['olm.targetNamespaces']
                 - name: ENABLE_CONVERSION_WEBHOOK
                   value: "true"
-                image: rrid12/argocd-operator:v0.11.0 #ADEN quay.io/argoprojlabs/argocd-operator:v0.10.0
+                image: rrid12/argo-home-operator:v0.11.0 #ADEN quay.io/argoprojlabs/argocd-operator:v0.10.0
                 livenessProbe:
                   httpGet:
                     path: /healthz

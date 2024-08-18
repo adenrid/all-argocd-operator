@@ -82,10 +82,10 @@ jobs:
 
 # Build operator container image
       - name: Build operator container image
-        run: make docker-build IMG=rrid12/argocd-operator:v0.11.0 #IMG=quay.io/argoprojlabs/argocd-operator:latest
+        run: make docker-build IMG=rrid12/argo-home-operator:v0.11.0 #IMG=quay.io/argoprojlabs/argocd-operator:latest
 
       - name: Save image
-        run: docker save rrid12/argocd-operator:v0.11.0 -o argo-operator-image.tar
+        run: docker save rrid12/argo-home-operator:v0.11.0 -o argo-operator-image.tar
       
       - name: Upload Docker image as artifact
         uses: actions/upload-artifact@v4
