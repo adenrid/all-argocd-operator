@@ -1969,7 +1969,7 @@ spec:
   installModes:
   - supported: false
     type: OwnNamespace
-  - supported: false #true
+  - supported: true
     type: SingleNamespace
   - supported: false #true
     type: MultiNamespace
