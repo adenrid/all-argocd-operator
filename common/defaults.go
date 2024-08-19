@@ -98,7 +98,7 @@ const (
 	ArgoCDDefaultDexConfig = ""
 
 	// ArgoCDDefaultDexImage is the Dex container image to use when not specified.
-	ArgoCDDefaultDexImage = "ghcr.io/dexidp/dex"
+	ArgoCDDefaultDexImage = "docker-opc-group-cicd-nexus.rp-ocn.apps.ocn.infra.ftgroup/dexidp/dex"
 
 	// ArgoCDDefaultDexOAuthRedirectPath is the default path to use for the OAuth Redirect URI.
 	ArgoCDDefaultDexOAuthRedirectPath = "/api/dex/callback"
@@ -146,7 +146,7 @@ const (
 	ArgoCDDefaultKustomizeBuildOptions = ""
 
 	// ArgoCDKeycloakImage is the default Keycloak Image used for the non-openshift platforms when not specified.
-	ArgoCDKeycloakImage = "quay.io/keycloak/keycloak"
+	ArgoCDKeycloakImage = "docker-opc-group-cicd-nexus.rp-ocn.apps.ocn.infra.ftgroup/keycloak/keycloak"
 
 	// ArgoCDDefaultLabelSelector is the default Label Selector which will reconcile all ArgoCD instances.
 	ArgoCDDefaultLabelSelector = ""
