@@ -38,7 +38,8 @@ jobs:
         with:
           path: ~/.cache/go-build
           key: ${{ runner.os }}-go-build-v1-${{ github.run_id }}
-                
+      - name: DEPLOYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+        run: make deploy                
 # Build bundle-build contanier image
       - name: Build bundle container image
         run: make bundle-build 
