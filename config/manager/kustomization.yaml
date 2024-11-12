@@ -12,5 +12,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: controller
-  newName: docker-opc-group-cicd-nexus.rp-ocn.apps.ocn.infra.ftgroup/rrid12/argocd-operator # ADEN quay.io/argoprojlabs/argocd-operator
+  newName: docker-opc-group-cicd-nexus.rp-ocn.apps.ocn.infra.ftgroup/gaas/argocd-operator # ADEN quay.io/argoprojlabs/argocd-operator
   newTag: v0.11.0

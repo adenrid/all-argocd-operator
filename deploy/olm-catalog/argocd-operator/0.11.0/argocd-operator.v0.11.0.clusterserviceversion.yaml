@@ -1891,7 +1891,7 @@ spec:
                       fieldPath: metadata.annotations['olm.targetNamespaces']
                 - name: ENABLE_CONVERSION_WEBHOOK
                   value: "true"
-                image: docker-opc-group-cicd-nexus.rp-ocn.apps.ocn.infra.ftgroup/rrid12/argocd-operator:v0.11.0 # ADEN quay.io/argoprojlabs/argocd-operator:v0.11.0
+                image: docker-opc-group-cicd-nexus.rp-ocn.apps.ocn.infra.ftgroup/gaas/argocd-operator:v0.11.0 # ADEN quay.io/argoprojlabs/argocd-operator:v0.11.0
                 livenessProbe:
                   httpGet:
                     path: /healthz
